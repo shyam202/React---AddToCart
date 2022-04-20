@@ -4,7 +4,7 @@ import { CartContext } from "./Cart";
 import Items from "./Items";
 
 const ContextCart = () => {
-  const item = useContext(CartContext);
+  const {item} = useContext(CartContext);
   return (
     <>
       <header>
