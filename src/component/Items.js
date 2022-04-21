@@ -1,14 +1,13 @@
-import React from "react";
-import "./cart.css"
-const Items = ({title, description, price,img,amount}) => {
+import React, { useContext } from "react";
+import { CartContext } from "./Cart";
+
+const Items = ({ id, title, description, price, img, amount }) => {
+  const { removeItem } = useContext(CartContext);
   return (
     <>
       <div className="items-info">
         <div className="product-img">
-          <img
-            src={img}
-            alt="image"
-          />
+          <img src={img} alt="productimg" />
         </div>
         <div className="title">
           <h2>{title}</h2>
@@ -23,7 +22,10 @@ const Items = ({title, description, price,img,amount}) => {
           <h3>{price}</h3>
         </div>
         <div className="remove-item">
-          <i className="fas fa-trash-alt remove"></i>
+          <i
+            className="fas fa-trash-alt remove"
+            onClick={() => removeItem(id)}
+          ></i>
         </div>
       </div>
       <hr />
