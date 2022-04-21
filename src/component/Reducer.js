@@ -25,5 +25,17 @@ export const reducer = (state, action) => {
     return { ...state, item: updatedCart };
   }
 
+  if (action.type === "DECREMENT") {
+    let updatedCart = state.item
+      .map((currItem) => {
+        if (currItem.id === action.payload) {
+          return { ...currItem, quantity: currItem.quantity - 1 };
+        }
+        return currItem;
+      })
+      .filter((currItem) => currItem.quantity !== 0);
+    return { ...state, item: updatedCart };
+  }
+
   return state;
 };
