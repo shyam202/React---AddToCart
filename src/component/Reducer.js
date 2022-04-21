@@ -8,11 +8,22 @@ export const reducer = (state, action) => {
     };
   }
 
-  if(action.type === 'CLEAR_CART'){
-    return{
+  if (action.type === "CLEAR_CART") {
+    return {
       ...state,
-      item: []
-    }
+      item: [],
+    };
   }
+
+  if (action.type === "INCREMENT") {
+    let updatedCart = state.item.map((currItem) => {
+      if (currItem.id === action.payload) {
+        return { ...currItem, quantity: currItem.quantity + 1 };
+      }
+      return currItem;
+    });
+    return { ...state, item: updatedCart };
+  }
+
   return state;
 };
