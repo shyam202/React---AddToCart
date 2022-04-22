@@ -46,6 +46,7 @@ const Cart = () => {
     });
   };
 
+  //useEffect to update the data
   useEffect(() => {
     dispatch({
       type: "GET_TOTAL",
