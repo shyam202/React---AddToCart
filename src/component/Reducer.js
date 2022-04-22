@@ -37,5 +37,20 @@ export const reducer = (state, action) => {
     return { ...state, item: updatedCart };
   }
 
+  if (action.type === "GET_TOTAL") {
+    let { totalItem } = state.item.reduce(
+      (acc, currVal) => {
+        let { quantity } = currVal;
+        acc.totalItem += quantity;
+        return acc;
+      },
+      {
+        totalItem: 0,
+      }
+    );
+
+    return { ...state, totalItem };
+  }
+
   return state;
 };

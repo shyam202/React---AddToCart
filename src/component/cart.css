@@ -51,7 +51,6 @@ header {
   display: flex;
   height: inherit;
   align-items: center;
-  
 }
 
 .continue-shopping .arrow-icon {
@@ -74,7 +73,6 @@ header {
   align-items: center;
   position: relative;
   justify-content: flex-end;
-
 }
 
 .cart-icon img {
@@ -84,17 +82,16 @@ header {
 }
 
 .cart-icon p {
-  
   position: absolute;
-  width: 4rem;
-  height: 4rem;
-  right: -1.2rem;
-  top: 0.9rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  right: -0.2rem;
+  top: 0.1rem;
   border-radius: 50%;
   background: #99cbf7;
   color: #fff;
   box-sizing: border-box;
-  font-size: 1.6rem;
+  font-size: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -140,7 +137,6 @@ header {
   margin: auto;
   display: grid;
   place-items: center;
-
 }
 
 .cart-items hr {

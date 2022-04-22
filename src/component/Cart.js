@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useEffect, useReducer } from "react";
 import "./cart.css";
 import { reducer } from "./Reducer";
 import { products } from "./product";
@@ -45,6 +45,12 @@ const Cart = () => {
       payload: id,
     });
   };
+
+  useEffect(() => {
+    dispatch({
+      type: "GET_TOTAL",
+    });
+  }, [state.item]);
 
   return (
     <CartContext.Provider
